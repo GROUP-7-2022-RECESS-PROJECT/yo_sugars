@@ -3,6 +3,7 @@ import 'package:yo_sugars/components/RoundedInputField.dart';
 import 'dart:math' as math;
 import 'package:another_flushbar/flushbar.dart';
 
+
 class BMI extends StatefulWidget {
   const BMI({Key? key}) : super(key: key);
 
@@ -17,10 +18,12 @@ class _BMIState extends State<BMI> {
   calcBMI() {
     double result = (double.parse(weight.text) /
         math.pow(double.parse(heightController.text), 1 / 2));
-    if (result > 18.5 || result < 25) {
-      return Text(result.toString() + "\n" + "\n" + "Your weight is normal");
+    if (result > 18.5 && result < 25) {
+      return Text(result.toString() + "\n" + "\n" + "Your weight  is normal");
     } else if (result < 18.5) {
       return Text(result.toString() + "\n" + "\n" + "You are underweight");
+    } else {
+      return Text(result.toString() + "\n" + "\n" + "You are obese");
     }
   }
 
