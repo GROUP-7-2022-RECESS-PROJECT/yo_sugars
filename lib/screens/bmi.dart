@@ -3,7 +3,6 @@ import 'package:yo_sugars/components/RoundedInputField.dart';
 import 'dart:math' as math;
 import 'package:another_flushbar/flushbar.dart';
 
-
 class BMI extends StatefulWidget {
   const BMI({Key? key}) : super(key: key);
 
@@ -81,7 +80,7 @@ class _BMIState extends State<BMI> {
                   "Enter your height and weight to calculate your BMI",
                   style: TextStyle(
                       fontSize: 25,
-                      color: Colors.orange,
+                      color: Colors.blue,
                       fontWeight: FontWeight.w900),
                 ),
                 const SizedBox(
@@ -115,7 +114,7 @@ class _BMIState extends State<BMI> {
                           icon: const Icon(Icons.info_outline,
                               size: 25.0, color: Colors.red),
                           duration: const Duration(seconds: 3),
-                          leftBarIndicatorColor: Colors.red,
+                          leftBarIndicatorColor: Colors.redAccent
                         ).show(context);
                       } else {
                         createAlert(context);
