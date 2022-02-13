@@ -46,15 +46,18 @@ class _MyDietState extends State<MyDiet> {
         content: NotificationContent(
           id: 10,
           channelKey: 'basic_channel',
-          title: '${Emojis.person_child} Your Diet update',
+          title: '${Emojis.person_child} Your Diet check',
           // ignore: unnecessary_brace_in_string_interps
           body: '',
           displayOnBackground: true,
+          criticalAlert: true,
+          wakeUpScreen: true,
+          displayOnForeground: true,
         ),
         schedule: NotificationInterval(
           timeZone: timezom,
           allowWhileIdle: true,
-          interval: 60,
+          interval: 6,
           repeats: true,
         ));
   }
