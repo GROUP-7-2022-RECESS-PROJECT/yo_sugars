@@ -1,6 +1,7 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:yo_sugars/screens/food_check.dart';
+import 'package:yo_sugars/screens/food_check_02.dart';
 
 class MyDiet extends StatefulWidget {
   const MyDiet({Key? key}) : super(key: key);
@@ -18,20 +19,20 @@ class _MyDietState extends State<MyDiet> {
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text("Allowed NOTIFICATIONS"),
-            content: Text("Our app would like you to send you notifications"),
+            title: const Text("Allowed NOTIFICATIONS"),
+            content: const Text("Our app would like you to send you notifications"),
             actions: [
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text("Don\'t Allow"),
+                child: const Text("Don\'t Allow"),
               ),
               TextButton(
                 onPressed: () => AwesomeNotifications()
                     .requestPermissionToSendNotifications()
                     .then((_) => Navigator.pop(context)),
-                child: Text("Allow"),
+                child: const Text("Allow"),
               ),
             ],
           ),
@@ -112,7 +113,7 @@ class _MyDietState extends State<MyDiet> {
                           Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      FoodCheck()),
+                                      const FoodCheck02()),
                               (route) => true);
                         },
                       )),
@@ -128,7 +129,7 @@ class _MyDietState extends State<MyDiet> {
                           Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      FoodCheck()),
+                                      const FoodCheck02()),
                               (route) => true);
                         },
                       ))
@@ -148,7 +149,7 @@ class _MyDietState extends State<MyDiet> {
                           Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      FoodCheck()),
+                                      const FoodCheck02()),
                               (route) => true);
                         },
                       )),
@@ -164,7 +165,7 @@ class _MyDietState extends State<MyDiet> {
                           Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      FoodCheck()),
+                                      const FoodCheck02()),
                               (route) => true);
                         },
                       ))
@@ -184,7 +185,7 @@ class _MyDietState extends State<MyDiet> {
                           Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      FoodCheck()),
+                                      const FoodCheck()),
                               (route) => true);
                         },
                       )),
@@ -200,7 +201,7 @@ class _MyDietState extends State<MyDiet> {
                           Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      FoodCheck()),
+                                      const FoodCheck()),
                               (route) => true);
                         },
                       )),
@@ -217,7 +218,7 @@ class _MyDietState extends State<MyDiet> {
                       onTap: () {
                         Navigator.of(context).pushAndRemoveUntil(
                             MaterialPageRoute(
-                                builder: (BuildContext context) => FoodCheck()),
+                                builder: (BuildContext context) => const FoodCheck()),
                             (route) => true);
                       },
                     ),
