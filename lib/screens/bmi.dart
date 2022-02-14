@@ -16,7 +16,7 @@ class _BMIState extends State<BMI> {
 
   calcBMI() {
     double result = (double.parse(weight.text) /
-        math.pow(double.parse(heightController.text), 1 / 2));
+        math.pow(double.parse(heightController.text), 2));
     if (result > 18.5 && result < 25) {
       return Text(result.toString() + "\n" + "\n" + "Your weight  is normal");
     } else if (result < 18.5) {
@@ -110,12 +110,12 @@ class _BMIState extends State<BMI> {
                     onPressed: () {
                       if (heightController == ' ' || weight == ' ') {
                         Flushbar(
-                          message: "Empty field\s found!",
-                          icon: const Icon(Icons.info_outline,
-                              size: 25.0, color: Colors.red),
-                          duration: const Duration(seconds: 3),
-                          leftBarIndicatorColor: Colors.redAccent
-                        ).show(context);
+                                message: "Empty field\s found!",
+                                icon: const Icon(Icons.info_outline,
+                                    size: 25.0, color: Colors.red),
+                                duration: const Duration(seconds: 240),
+                                leftBarIndicatorColor: Colors.redAccent)
+                            .show(context);
                       } else {
                         createAlert(context);
                       }
