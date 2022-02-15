@@ -31,11 +31,11 @@ void main() async {
           enableVibration: true,
         )
       ],
-        channelGroups: [
-    NotificationChannelGroup(
-        channelGroupkey: 'basic_channel_group',
-        channelGroupName: 'Basic group')
-  ],
+      channelGroups: [
+        NotificationChannelGroup(
+            channelGroupkey: 'basic_channel_group',
+            channelGroupName: 'Basic group')
+      ],
       debug: true);
 
   runApp(const MyApp());

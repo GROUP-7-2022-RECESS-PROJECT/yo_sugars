@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:yo_sugars/screens/bmi.dart';
 import 'package:yo_sugars/screens/mydiet.dart';
+import 'package:yo_sugars/screens/profile/TabButton.dart';
 import 'package:yo_sugars/screens/profile/user_profile.dart';
 
 class Index extends StatefulWidget {
@@ -9,6 +11,12 @@ class Index extends StatefulWidget {
 }
 
 class _IndexState extends State<Index> {
+  FirebaseAuth signout = FirebaseAuth.instance;
+  FirebaseAuth signedin = FirebaseAuth.instance;
+  signingout() async {
+    await signout.signOut();
+  }
+
   GlobalKey<ScaffoldState> _openDrawer = GlobalKey<ScaffoldState>();
   Drawer _showDrawer() {
     return Drawer(
@@ -16,13 +24,15 @@ class _IndexState extends State<Index> {
       color: Colors.blue[200],
       child: Column(
         children: [
-          const UserAccountsDrawerHeader(
+          UserAccountsDrawerHeader(
             currentAccountPicture: CircleAvatar(
               radius: 10.0,
               backgroundColor: Colors.yellow,
             ),
-            accountName: Text("Good Person"),
-            accountEmail: Text("goodperson@gmail.com"),
+            accountName: Text("User"),
+            accountEmail: Text(
+              "Signed in as: " + "${signedin.currentUser!.email}",
+            ),
           ),
           ListTile(
               leading: const Icon(Icons.food_bank),
@@ -48,7 +58,7 @@ class _IndexState extends State<Index> {
           const Divider(
             color: Colors.white,
           ),
-            ListTile(
+          ListTile(
               leading: const Icon(Icons.person_search_outlined),
               title: const Text("User Profile"),
               onTap: () {
@@ -57,6 +67,17 @@ class _IndexState extends State<Index> {
                 });
                 openCloseDrawer();
               }),
+          const Divider(
+            color: Colors.white,
+          ),
+          ListButton(
+            label: 'Sign Out',
+            icon: Icons.outbond_outlined,
+            onTap: () {
+              signingout();
+              Navigator.of(context).pop();
+            },
+          ),
           const Expanded(
             child: Align(
               alignment: Alignment.bottomCenter,
@@ -74,11 +95,7 @@ class _IndexState extends State<Index> {
     ));
   }
 
-  List<Widget> tabs = [
-    const MyDiet(),
-    const BMI(),
-    UserInfoScreen()
-  ];
+  List<Widget> tabs = [const MyDiet(), const BMI(), UserInfoScreen()];
 
   int currentTabIndex = 0;
 
