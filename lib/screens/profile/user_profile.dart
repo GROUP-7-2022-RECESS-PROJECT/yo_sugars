@@ -5,8 +5,7 @@ import 'package:yo_sugars/components/palette.dart';
 import 'user_profile_body.dart';
 
 class UserInfoScreen extends StatelessWidget {
-  // final User user;
-  // const UserInfoScreen({Key key, @required this.user}) : super(key: key);
+  
 
   @override
   Widget build(BuildContext context) {

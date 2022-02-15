@@ -25,7 +25,7 @@ class _MyDietState extends State<MyDiet> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text("Don\'t Allow"),
+                child: Text("Don't Allow"),
               ),
               TextButton(
                 onPressed: () => AwesomeNotifications()
@@ -48,18 +48,17 @@ class _MyDietState extends State<MyDiet> {
           channelKey: 'basic_channel',
           title: '${Emojis.person_child} Your Diet check',
           // ignore: unnecessary_brace_in_string_interps
-          body: '',
+          body: 'Have you checked in today?',
           displayOnBackground: true,
           criticalAlert: true,
           wakeUpScreen: true,
           displayOnForeground: true,
         ),
         schedule: NotificationInterval(
-          timeZone: timezom,
-          allowWhileIdle: true,
-          interval: 6,
-          repeats: true,
-        ));
+            timeZone: timezom,
+            allowWhileIdle: true,
+            interval: 60,
+            repeats: true));
   }
 
   @override
