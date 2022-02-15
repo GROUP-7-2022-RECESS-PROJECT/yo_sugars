@@ -1,5 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:yo_sugars/screens/profile/TabButton.dart';
 import 'package:yo_sugars/screens/profile/TabLabel.dart';
 
@@ -15,11 +15,10 @@ class UserProfileBody extends StatefulWidget {
 }
 
 class _UserProfileBodyState extends State<UserProfileBody> {
-  Future<String?> getInfor() async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-
-    String? personEmail = sharedPreferences.getString("email");
-    return personEmail;
+  FirebaseAuth signedin = FirebaseAuth.instance;
+  FirebaseAuth signout = FirebaseAuth.instance;
+  signingout() async {
+    await signout.signOut();
   }
 
   @override
@@ -35,50 +34,15 @@ class _UserProfileBodyState extends State<UserProfileBody> {
           Center(
             child: ProfilePic(),
           ),
-          const Center(
+          Center(
             child: Text(
-              "yosugar@gmail.com",
-              style: TextStyle(
+              "Signed in as: " + "${signedin.currentUser!.email}",
+              style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w800,
-                fontSize: 30,
               ),
             ),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.all(10),
-          //   child: Center(
-          //     child: Text(
-          //       "$getInfor()",
-          //       textAlign: TextAlign.center,
-          //       style: const TextStyle(
-          //         color: Colors.white,
-          //         fontSize: 17,
-          //         letterSpacing: 0.5,
-          //         fontWeight: FontWeight.w400,
-          //         fontStyle: FontStyle.italic,
-          //       ),
-          //     ),
-          //   ),
-          // ),
-          const Padding(
-            padding: EdgeInsets.all(10),
-            child: Center(
-              child: Text(
-                "+256 778 456783",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 17,
-                  letterSpacing: 0.5,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
-            ),
-          ),
-          // Spacer(flex: 2),
-          // SignOutButton(),
           const SizedBox(height: 5.0),
           const TabLabel(
               label: 'Get Help',
@@ -97,7 +61,7 @@ class _UserProfileBodyState extends State<UserProfileBody> {
             icon: Icons.mail,
             page: () {
               launch(
-                  "mailto:arnoldrutanana@gmail.com.com?subject=Report%20Problem");
+                  "mailto:bagendasamuel3@gmail.com.com?subject=Report%20Problem");
             },
           ),
           TabButton(
@@ -105,7 +69,7 @@ class _UserProfileBodyState extends State<UserProfileBody> {
             icon: Icons.feedback_outlined,
             page: () {
               launch(
-                  "mailto:arnoldrutanana@gmail.com.com?subject=Report%20Problem");
+                  "mailto:lindakellen9@gmail.com.com?subject=Report%20Problem");
             },
           ),
           const TabLabel(
@@ -114,10 +78,17 @@ class _UserProfileBodyState extends State<UserProfileBody> {
             align: Alignment.centerLeft,
           ),
           const SizedBox(height: 10.0),
+          // ListButton(
+          //   label: 'About',
+          //   icon: Icons.help_outline,
+          //   onTap: () {},
+          // ),
           ListButton(
-            label: 'About',
-            icon: Icons.help_outline,
-            onTap: () {},
+            label: 'Sign Out',
+            icon: Icons.outbond_outlined,
+            onTap: () {
+              signingout();
+            },
           ),
         ],
       ),
