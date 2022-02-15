@@ -38,29 +38,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAjB6lSA9rCj6fqPUFkgWANMA86_3ZR8GI',
-    appId: '1:60640502916:web:b0b101cfecbcf1c8b2ced1',
-    messagingSenderId: '60640502916',
-    projectId: 'sugars-d79ce',
-    authDomain: 'sugars-d79ce.firebaseapp.com',
-    storageBucket: 'sugars-d79ce.appspot.com',
+    apiKey: 'AIzaSyCHreL7BkBO9-2CGT0oInmT9HLMyxRox3c',
+    appId: '1:320933810352:web:f1d9bda172113c4d75ab75',
+    messagingSenderId: '320933810352',
+    projectId: 'yo-sugars',
+    authDomain: 'yo-sugars.firebaseapp.com',
+    storageBucket: 'yo-sugars.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCPbjhnBbWYgK-Z9HSzyZQMHAgJJPC-_RU',
-    appId: '1:60640502916:android:2275c6d4c9ab3feab2ced1',
-    messagingSenderId: '60640502916',
-    projectId: 'sugars-d79ce',
-    storageBucket: 'sugars-d79ce.appspot.com',
+    apiKey: 'AIzaSyCmAOdIxmrp8SZ9NfhTQbRyiWLlWhjNRTo',
+    appId: '1:320933810352:android:8ce1fbb24451225e75ab75',
+    messagingSenderId: '320933810352',
+    projectId: 'yo-sugars',
+    storageBucket: 'yo-sugars.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCzc4afnA3O74vV3Dtgy1WNEVvds4w7B-E',
-    appId: '1:60640502916:ios:a3f804266e3aca8eb2ced1',
-    messagingSenderId: '60640502916',
-    projectId: 'sugars-d79ce',
-    storageBucket: 'sugars-d79ce.appspot.com',
-    iosClientId: '60640502916-l1cp841cjfmdq2clk1vkilab3ul14m0f.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDk-1Tr-QAEf-6QqVputfzAmWahZI2sU6A',
+    appId: '1:320933810352:ios:b5012b044ced292375ab75',
+    messagingSenderId: '320933810352',
+    projectId: 'yo-sugars',
+    storageBucket: 'yo-sugars.appspot.com',
+    iosClientId: '320933810352-aaucgp17l2bre5l8rmiuf6kpibsclu7e.apps.googleusercontent.com',
     iosBundleId: 'com.example.app',
   );
 }
