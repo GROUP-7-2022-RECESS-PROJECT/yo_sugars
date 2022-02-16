@@ -147,7 +147,7 @@ class _FoodCheckState extends State<FoodCheck> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: const Text("Calculation session"),
+            title: const Text("Calculation  session"),
             content: StatefulBuilder(builder: (context, _) {
               return SingleChildScrollView(
                 child: Column(
@@ -377,8 +377,8 @@ class _FoodCheckState extends State<FoodCheck> {
                       onChanged: (value) {
                         setState(() {
                           selectedItem03 = value!;
-                        });
-                      },
+                        }
+                        );                      },
                       items: supperItems
                           .map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
